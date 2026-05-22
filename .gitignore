@@ -1,0 +1,28 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+
+# Dagster — keep dagster.yaml, ignore runtime artifacts
+.dagster/storage/
+.dagster/schedules/
+.dagster/runs/
+.dagster/event_logs/
+.tmp_dagster_*/
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
