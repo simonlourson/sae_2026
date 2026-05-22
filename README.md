@@ -51,7 +51,7 @@ To answer it, students must collect, clean, cross-reference, and expose data fro
 
 ### 6. Administrative Boundaries
 - **What**: Polygon geometries for communes, departments, and regions.
-- **Source**: [data.gouv.fr — IGN Admin Express](https://www.data.gouv.fr/fr/datasets/adminexpress/)
+- **Source**: [data.gouv.fr — IGN Admin Express](https://www.data.gouv.fr/fr/datasets/5808de39c751df1e0679df72/)
 - **Format**: GeoJSON / Shapefile
 - **Role**: Spatial aggregation — group transactions by geographic zone, power choropleth maps in dashboards.
 
