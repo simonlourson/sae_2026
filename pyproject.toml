@@ -1,0 +1,15 @@
+[project]
+name = "sae-2026"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "dagster>=1.13.5",
+    "dagster-duckdb>=0.29.5",
+    "dagster-webserver>=1.13.5",
+    "duckdb>=1.5.3",
+    "requests>=2.34.2",
+]
+
+[tool.dagster]
+module_name = "sae_2026"
