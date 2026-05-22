@@ -31,3 +31,10 @@ build/
 # IDE
 .vscode/
 .idea/
+
+# dbt
+logs/
+# dbt
+transform/target/
+transform/dbt_packages/
+transform/.user.yml

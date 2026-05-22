@@ -5,8 +5,10 @@ description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
     "dagster>=1.13.5",
+    "dagster-dbt>=0.29.5",
     "dagster-duckdb>=0.29.5",
     "dagster-webserver>=1.13.5",
+    "dbt-duckdb>=1.10.1",
     "duckdb>=1.5.3",
     "requests>=2.34.2",
 ]
