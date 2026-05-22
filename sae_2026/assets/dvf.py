@@ -1,7 +1,7 @@
 import dagster
 from dagster_duckdb import DuckDBResource
 
-YEARS = ["2022", "2023", "2024", "2025"]
+YEARS = ["2021", "2022", "2023", "2024", "2025"]
 DEPARTMENTS = ["44", "29", "22", "56", "35"]
 
 BASE_URL = "https://files.data.gouv.fr/geo-dvf/latest/csv"

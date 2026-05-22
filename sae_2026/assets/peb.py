@@ -56,7 +56,15 @@ def raw_peb(
             conn.execute("LOAD spatial")
 
             conn.execute("DROP TABLE IF EXISTS raw_peb")
-            conn.execute(f"CREATE TABLE raw_peb AS SELECT * FROM ST_Read('{temp_path}')")
+            # The DGAC GeoJSON files use Lambert-93 (EPSG:2154) coordinates despite
+            # being GeoJSON (which should be WGS84). Transform to WGS84 on load so
+            # the geometries can be directly joined with DVF lat/lng coordinates.
+            conn.execute(f"""
+                CREATE TABLE raw_peb AS
+                SELECT * EXCLUDE (geom),
+                       ST_Transform(geom, 'EPSG:2154', 'EPSG:4326', always_xy := true) AS geom
+                FROM ST_Read('{temp_path}')
+            """)
 
             row_count = conn.execute("SELECT COUNT(*) FROM raw_peb").fetchone()[0]
             counts_by_zone = conn.execute(

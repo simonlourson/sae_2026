@@ -15,6 +15,11 @@ build/
 .dagster/schedules/
 .dagster/runs/
 .dagster/event_logs/
+.dagster/.logs_queue/
+.dagster/.nux/
+.dagster/.telemetry/
+.dagster/history/
+.dagster/logs/
 .tmp_dagster_*/
 
 # macOS
