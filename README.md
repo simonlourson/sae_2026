@@ -21,7 +21,7 @@ To answer it, students must collect, clean, cross-reference, and expose data fro
 
 ### 2. DPE — Diagnostic de Performance Énergétique
 - **What**: Energy performance audits for existing properties — energy rating (A to G), estimated annual energy cost, heating system type, insulation quality.
-- **Source**: [data.ademe.fr](https://data.ademe.fr/datasets/dpe-v2-logements-existants)
+- **Source**: [data.ademe.fr](https://data.ademe.fr/datasets/dpe03existant)
 - **Format**: CSV
 - **Join strategy**: Match to DVF by normalized address and commune code.
 - **Key business question**: Does an A or B energy rating translate into a measurable price premium? Are buyers becoming more sensitive to energy ratings over time?
