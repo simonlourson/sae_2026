@@ -4,7 +4,7 @@ import dagster
 from dagster_dbt import DagsterDbtTranslator, DbtCliResource, DbtProject, dbt_assets
 from dagster_duckdb import DuckDBResource
 
-from .assets import raw_dpe, raw_dvf, raw_peb
+from .assets import ban_geocoding, raw_dpe, raw_dvf, raw_peb
 
 DBT_PROJECT_DIR = Path(__file__).parent.parent / "transform"
 
@@ -36,7 +36,7 @@ def transform_dbt_assets(context: dagster.AssetExecutionContext, dbt: DbtCliReso
 
 
 defs = dagster.Definitions(
-    assets=[raw_dpe, raw_dvf, raw_peb, transform_dbt_assets],
+    assets=[ban_geocoding, raw_dpe, raw_dvf, raw_peb, transform_dbt_assets],
     resources={
         "database": DuckDBResource(database="dvf.duckdb"),
         "dbt": DbtCliResource(
