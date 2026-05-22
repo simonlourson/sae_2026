@@ -14,7 +14,8 @@ To answer it, students must collect, clean, cross-reference, and expose data fro
 
 ### 1. DVF — Demandes de Valeurs Foncières
 - **What**: Every property sale registered in France — price, surface area, number of rooms, property type (apartment, house, land), address, and date of transaction.
-- **Source**: [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/)
+- **Source**: [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/) — raw notarial data (no coordinates)
+- **Geo-enriched version**: [data.gouv.fr — geo-DVF](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/) — lat/lng added by Etalab, available 2021–present, structured as `https://files.data.gouv.fr/geo-dvf/latest/csv/{year}/departements/{dept}.csv.gz`
 - **Format**: CSV (one file per year, per department, or as a national file)
 - **Volume**: Tens of millions of rows nationally — students will need to think carefully about partitioning and incremental loading strategies.
 - **Key fields**: `valeur_fonciere`, `surface_reelle_bati`, `nombre_pieces_principales`, `type_local`, `adresse_*`, `code_commune`, `date_mutation`
@@ -46,7 +47,7 @@ To answer it, students must collect, clean, cross-reference, and expose data fro
 - **What**: The national address database, mapping every French address to GPS coordinates (latitude/longitude).
 - **Source**: [adresse.data.gouv.fr](https://adresse.data.gouv.fr/data/ban/adresses/latest/)
 - **Format**: CSV
-- **Role**: Geocoding bridge. DVF contains addresses but no coordinates. BAN is the key that unlocks all spatial analysis — without it, PEB zone joins and proximity calculations are not possible.
+- **Role**: Geocoding bridge. The raw DVF contains addresses but no coordinates — BAN is the key that unlocks spatial analysis for datasets that lack lat/lng. Note: the geo-enriched DVF version already includes coordinates geocoded by Etalab, so BAN is only strictly needed if students use the raw DVF source or need to geocode additional datasets.
 
 ### 6. Administrative Boundaries
 - **What**: Polygon geometries for communes, departments, and regions.
